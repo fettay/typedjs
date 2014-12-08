@@ -6,33 +6,9 @@
     <!-- Get jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/typed.js" type="text/javascript"></script>
-    <script>
-    $(function(){
-
-        $("#typed").typed({
-            strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
-            typeSpeed: 30,
-            backDelay: 500,
-            loop: false,
-            contentType: 'html', // or text
-            // defaults to false for infinite loop
-            loopCount: false,
-            callback: function(){ foo(); },
-            resetCallback: function() { newTyped(); }
-        });
-
-        $(".reset").click(function(){
-            $("#typed").typed('reset');
-        });
-
-    });
-
-    function newTyped(){ /* A new typed object */ }
-
-    function foo(){ console.log("Callback"); }
-
-    </script>
-    <link href="main.css" rel="stylesheet"/>
+    <script src="script.js" type="text/javascript"></script>
+    
+    <link href="bootstrap.css" rel="stylesheet"/>
     <style>
         /* code for animated blinking cursor */
         .typed-cursor{
@@ -69,20 +45,30 @@
             50% { opacity:0; }
             100% { opacity:1; }
         }
+        .wrapper{
+            background-color: #272822;
+            color:#00ff24;
+            font-family: 'Lucida console';
+            min-height: 300px;
+        }
+        #connexion, #typed{
+            margin:0;
+        }   
     </style>
 </head>
 <body>
-
-    <div class="wrap">
-        <h1 class="h1">Typed.js</h1>
+   <div class="wrapper">
+    <div class="container">
+    <div class="raw">
+        <div class="col-md-12">
 
         <div class="type-wrap">
-            <span id="typed" style="white-space:pre;"></span>
+           <p class="hidden" id="connexion"> Connexion: Mon Dec 8 16:26:26 on geniuslab000 </p> <span id="typed"></span> 
         </div>
+    </div>
+</div>
+</div>
 
-        <div class="links">
-            <a href="http://www.mattboldt.com/demos/typed-js">View original demo</a> | <a href="http://www.mattboldt.com">View mattboldt.com</a> | <a href="http://www.twitter.com/atmattb">Complain to Matt about how awful this is</a>
-        </div>
     </div>
 
 </body>
